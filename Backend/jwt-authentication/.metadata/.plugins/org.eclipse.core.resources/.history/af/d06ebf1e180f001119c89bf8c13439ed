@@ -1,0 +1,24 @@
+package com.org.jwt.service;
+
+import org.springframework.stereotype.Service;
+
+import com.org.jwt.model.User;
+import com.org.jwt.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+
+		private final UserRepository userRepository;
+		
+		public User saveUser(User user)
+		{
+			if(userRepository.existingByEmailIgnoreCase(user.getEmail()))
+			{
+				
+			}
+			return "Hello";
+		}
+}

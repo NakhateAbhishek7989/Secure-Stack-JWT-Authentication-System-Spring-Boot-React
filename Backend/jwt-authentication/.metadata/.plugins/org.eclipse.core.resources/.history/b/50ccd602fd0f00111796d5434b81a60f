@@ -1,0 +1,13 @@
+package com.org.jwt.config;
+
+import java.security.SecureRandom;
+
+public class JwtSecretGenerator {
+
+	public static void main(String args[])
+	{
+		byte[] key = new byte[32];
+		
+		new SecureRandom().nextBytes(key);
+	}
+}

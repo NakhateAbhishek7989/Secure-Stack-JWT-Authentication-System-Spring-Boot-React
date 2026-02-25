@@ -1,0 +1,40 @@
+package com.org.jwt.service;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.org.jwt.model.User;
+import com.org.jwt.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+
+		private final UserRepository userRepository;
+		
+		private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		
+		
+		public User saveUser(User user)
+		{
+			if(userRepository.existsByEmailIgnoreCase(user.getEmail()))
+			{
+				throw new IllegalArgumentException("Email Already Exists");
+			}
+
+			String encodePassword = passwordEncoder.encode(user.getPassword());
+			user.setPassword(encodePassword);
+			
+			return userRepository.save(user);
+			
+		}
+		
+		public User findByEmail(String email)
+		{
+			return userRepository.findByEmailIgnoreCase(email);
+		}
+		
+		
+}

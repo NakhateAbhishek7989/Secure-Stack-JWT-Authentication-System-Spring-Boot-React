@@ -1,0 +1,12 @@
+package com.org.jwt.config;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class JwtFilter extends OncePerRequestFilter{
+
+}

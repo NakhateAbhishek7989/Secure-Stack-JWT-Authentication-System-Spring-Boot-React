@@ -1,0 +1,5 @@
+package com.org.jwt.controller;
+
+public class AdminController {
+
+}

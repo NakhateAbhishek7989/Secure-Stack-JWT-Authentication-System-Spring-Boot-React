@@ -1,0 +1,24 @@
+package com.org.jwt.config;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.org.jwt.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class JwtFilter extends OncePerRequestFilter{
+
+	private final JwtUtil jwtUtil;
+	
+	private final UserRepository userRepository;
+	
+	public JwtFilter(JwtUtil jwtUtil, UserRepository userRepository)
+	{
+		this.jwtUtil = jwtUtil;
+		this.userRepository = userRepository;
+	}
+	
+}

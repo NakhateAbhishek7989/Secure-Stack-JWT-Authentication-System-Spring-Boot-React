@@ -1,0 +1,6 @@
+package com.org.jwt.config;
+
+
+public class SecurityConfig {
+
+}

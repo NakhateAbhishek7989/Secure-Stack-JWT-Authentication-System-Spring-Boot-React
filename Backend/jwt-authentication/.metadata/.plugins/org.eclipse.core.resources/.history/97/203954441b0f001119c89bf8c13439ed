@@ -1,0 +1,11 @@
+package com.org.jwt.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.org.jwt.model.User;
+
+public interface UserRepository extends JpaRepository<User, Long>{
+		
+	boolean existingByEmailIgnoreCase(String email);
+	
+}

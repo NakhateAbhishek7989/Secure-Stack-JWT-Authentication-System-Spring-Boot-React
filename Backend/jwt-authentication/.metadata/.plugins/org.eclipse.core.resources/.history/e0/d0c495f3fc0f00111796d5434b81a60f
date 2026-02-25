@@ -1,0 +1,9 @@
+package com.org.jwt.config;
+
+public class JwtSecretGenerator {
+
+	public static void main(String args[])
+	{
+		byte[] key = new byte[32];
+	}
+}
